@@ -15,7 +15,6 @@ gpt4_config = {
     "api_type": API_TYPE,
     "api_key": OPENAI_API_KEY,
     "base_url": BASE_URL,
-    "api_version": API_VERSION,
     "cache_seed": None  # Disable caching
 }
 
