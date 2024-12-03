@@ -1,10 +1,6 @@
 name: Docker Build and Push
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 env:
@@ -45,11 +41,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-      - name: Make package public
-        run: |
-          curl -X PATCH \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/user/packages/container/${{ github.event.repository.name }}/versions/$(echo ${{ steps.meta.outputs.tags }} | cut -d':' -f2) \
-            -d '{"visibility":"public"}'
