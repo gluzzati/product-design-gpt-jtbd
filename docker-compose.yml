@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  notebook:
+    image: ghcr.io/gluzzati/product-design-gpt-jtbd:latest
+    ports:
+      - "8888:8888"
+    #
+    # environment:
+    #  - OPENAI_API_KEY=your-api-key

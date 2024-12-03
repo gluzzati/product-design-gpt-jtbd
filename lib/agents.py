@@ -18,6 +18,11 @@ gpt4_config = {
     "cache_seed": None  # Disable caching
 }
 
+
+def set_apikey(key):
+    gpt4_config["api_key"] = key
+
+
 user = autogen.ConversableAgent(
     name                    = "User",
     system_message          = """Give the task and wait for the output from the other agents.""",
