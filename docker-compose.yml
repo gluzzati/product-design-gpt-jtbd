@@ -4,6 +4,7 @@ services:
     image: ghcr.io/gluzzati/product-design-gpt-jtbd:latest
     ports:
       - "8888:8888"
-    #
-    # environment:
-    #  - OPENAI_API_KEY=your-api-key
+    environment:
+     - OPENAI_API_KEY=your-api-key
+     - MODEL=gpt-4-1106-preview
+     - TEMPERATURE=0.5
